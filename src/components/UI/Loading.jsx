@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-export class Loading extends Component {
-   render() {
-      const { heightStyle, classStyle } = this.props;
-      return (
-         <div
-            className={`loading-page ` + this.props.classStyle}
-            style={{ height: this.props.heightStyle }}
-         >
-            <Spinner animation='border' role='status'>
-               <span className='visually-hidden'>Loading...</span>
-            </Spinner>
-         </div>
-      );
-   }
-}
+
+const Loading = ({ heightStyle, classStyle }) => {
+   return (
+      <div
+         className={`loading-page ${classStyle}`}
+         style={{ height: heightStyle }}
+      >
+         <Spinner animation='border' role='status'>
+            <span className='visually-hidden'>Loading...</span>
+         </Spinner>
+      </div>
+   );
+};
 
 export default Loading;
