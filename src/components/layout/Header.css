@@ -1,0 +1,14 @@
+header{
+  padding: 10px 0;
+  background: #109BE9;  
+}
+
+header .active {
+  color: red !important;
+}
+
+header .nav-link {
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+}
