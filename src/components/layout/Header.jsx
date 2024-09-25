@@ -1,40 +1,24 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import { IS_LOGIN } from '../../constants/index';
 
 const Header = () => {
+   const handleLogout = () => {
+      localStorage.removeItem(IS_LOGIN);
+   };
    return (
-      <header>
-         <Container>
-            <ul className='nav d-flex justify-content-start'>
-               <li className='nav-item me-4'>
-                  <NavLink className='nav-link' to='/'>
-                     Home
-                  </NavLink>
-               </li>
-               <li className='nav-item me-4'>
-                  <NavLink className='nav-link' to='/expenses'>
-                     expenses
-                  </NavLink>
-               </li>
-               <li className='nav-item me-4'>
-                  <NavLink className='nav-link' to='/earnings'>
-                     earnings
-                  </NavLink>
-               </li>
-               <li className='nav-item me-4'>
-                  <NavLink className='nav-link' to='/lending'>
-                     lending
-                  </NavLink>
-               </li>
-               <li className='nav-item me-4'>
-                  <NavLink className='nav-link' to='/borrowing'>
-                     borrowing
-                  </NavLink>
-               </li>
-            </ul>
-         </Container>
+      <header className='header-block'>
+         <div>
+            <div className='logo'>
+               <img className='logo-img' src='/logo.png' alt='' />
+               <span>Tinch</span>
+            </div>
+
+            <NavLink to='/login' onClick={handleLogout}>
+               <img src='/icons/LoginIcon.svg' alt='' />
+            </NavLink>
+         </div>
       </header>
    );
 };

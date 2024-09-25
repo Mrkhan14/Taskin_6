@@ -1,14 +1,18 @@
-header{
-  padding: 10px 0;
-  background: #109BE9;  
+header {
+   padding: 10px 24px;
+   height: 6vh;
+   border-bottom: 1px solid #e1e1e1;
 }
-
-header .active {
-  color: red !important;
+header .logo-img {
+   height: 4vh;
 }
-
-header .nav-link {
-  color: #fff;
-  padding-left: 0;
-  padding-right: 0;
+.logo span {
+   font-size: 19px;
+   font-weight: 600;
+   color: #8cc63f;
+}
+.header-block > div {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }

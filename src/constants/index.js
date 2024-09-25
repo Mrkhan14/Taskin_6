@@ -1,8 +1,8 @@
-const LOGIN = {
-   login: 'aaa',
-   pas: '123456',
+const USER = {
+   username: 'ali',
+   password: '123456',
 };
 const LIMIT = 8;
+const IS_LOGIN = 'ISLOGIN';
 
-const all = { LOGIN, LIMIT };
-export default all;
+export { IS_LOGIN, LIMIT, USER };

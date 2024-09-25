@@ -6,11 +6,13 @@ import Header from './Header';
 const Layout = () => {
    return (
       <Fragment>
-         <Header />
-         <main>
-            <Outlet />
-         </main>
-         <Footer />
+         <div className='app-project'>
+            <Header />
+            <main className='position-relative'>
+               <Outlet />
+            </main>
+            <Footer />
+         </div>
       </Fragment>
    );
 };
