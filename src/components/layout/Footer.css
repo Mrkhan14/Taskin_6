@@ -20,3 +20,16 @@ footer {
 .nav-link.active .name-block {
    display: block;
 }
+
+@media only screen and (max-width: 768px) {
+   .nav-link.active .name-block {
+      display: none;
+   }
+
+   .nav-link.active {
+      background: #8cc63f;
+      color: #fff;
+      padding: 12px;
+      border-radius: 50px;
+   }
+}

@@ -28,9 +28,9 @@ function LendingPage() {
             <LendingCard key={i} {...item}></LendingCard>
          ))}
 
-         <button className='btn btn-outline-warning ui-style mx-3 rounded-circle'>
+         <div className='btn btn-outline-warning ui-style mx-3 rounded-circle'>
             <PlusIcon></PlusIcon>
-         </button>
+         </div>
       </div>
    );
 }
