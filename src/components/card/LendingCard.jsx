@@ -8,10 +8,11 @@ const LendingCard = props => {
       firstName,
       lastName,
       phoneNumber,
-      debt,
       date,
-      deleteDebt,
-      editDebt,
+      deleteData,
+      editData,
+      path,
+      data,
    } = props;
    return (
       <div className='user'>
@@ -20,21 +21,18 @@ const LendingCard = props => {
                {firstName} {lastName}
             </div>
             <div className='btns'>
-               <Link
-                  to={`/debts-page/${id}`}
-                  className='btn btn-outline-primary'
-               >
+               <Link to={`/${path}/${id}`} className='btn btn-outline-primary'>
                   M
                </Link>
                <button
                   className='btn btn-outline-warning mx-3'
-                  onClick={() => editDebt(id)}
+                  onClick={() => editData(id)}
                >
                   E
                </button>
                <button
                   className='btn btn-outline-danger'
-                  onClick={() => deleteDebt(id)}
+                  onClick={() => deleteData(id)}
                >
                   D
                </button>
@@ -42,13 +40,13 @@ const LendingCard = props => {
          </div>
          <div className='p-3 d-flex justify-content-between align-items-center'>
             <div>
-               phoneNumber: <b>{phoneNumber}</b>
+               Phone : <b>{phoneNumber}</b>
             </div>
             <div>
-               debt: <b>{debt}</b>
+               Amount of money: <b>{data}</b>
             </div>
             <div>
-               date: <b>{date}</b>
+               Date: <b>{date}</b>
             </div>
          </div>
       </div>

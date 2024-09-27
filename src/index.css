@@ -55,3 +55,29 @@ main {
    bottom: 10px;
    right: 10px;
 }
+
+.item-home {
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 1px 4px 6px 1px #0000001a, 1px 2px 8px -2px #0000001a;
+}
+
+.borrowing {
+   background: #edf2ff;
+}
+
+.debts {
+   background: linear-gradient(90deg, #0066ffb0 0%, #8fb9f8e3 100%);
+}
+.item-home .title {
+   font-size: 18px;
+   color: #92929d !important;
+}
+.item-home .total {
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.debts .title {
+   color: #fff !important;
+}

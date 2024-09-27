@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 import { v4 } from 'uuid';
 import LendingCard from '../../components/card/LendingCard';
 import PlusIcon from '../../components/UI/PlusIcon';
@@ -28,18 +29,21 @@ const DebtsPage = () => {
             const newDebts = [...debts, { ...debt, id: v4() }];
             setDebts(newDebts);
             localStorage.setItem('debts', JSON.stringify(newDebts));
+            toast.success("Malumot qo'shildi");
          } else {
             const newDebts = debts.map(item =>
                item.id === selected ? debt : item
             );
             localStorage.setItem('debts', JSON.stringify(newDebts));
             setDebts(newDebts);
+            toast.success("Malumot o'zgardi");
          }
-         handleClose();
          setDebt(defaultDebt);
          setValidated(false);
+         handleClose();
       } else {
          setValidated(true);
+         toast.error('Erverda xatolik bor');
       }
    };
 
@@ -47,13 +51,18 @@ const DebtsPage = () => {
       setDebt({ ...debt, [e.target.id]: e.target.value });
    };
 
-   const deleteDebt = id => {
+   const deleteData = id => {
       let newDebts = debts.filter(debt => debt.id !== id);
-      setDebts(newDebts);
-      localStorage.setItem('debts', JSON.stringify(newDebts));
+      if (newDebts) {
+         setDebts(newDebts);
+         localStorage.setItem('debts', JSON.stringify(newDebts));
+         toast.success("Malumot o'chrildi");
+      } else {
+         toast.error('Erverda xatolik bor');
+      }
    };
 
-   const editDebt = id => {
+   const editData = id => {
       const debtFound = debts.find(debt => debt.id === id);
       setSelected(id);
       setDebt(debtFound);
@@ -85,17 +94,23 @@ const DebtsPage = () => {
          </div>
 
          {debts
-            .filter(debt =>
-               debt.firstName
-                  .toLowerCase()
-                  .includes(search.trim().toLowerCase())
+            .filter(
+               debt =>
+                  debt.firstName
+                     .toLowerCase()
+                     .includes(search.trim().toLowerCase()) ||
+                  debt.lastName
+                     .toLowerCase()
+                     .includes(search.trim().toLowerCase())
             )
             .map((item, i) => (
                <LendingCard
                   key={i}
                   {...item}
-                  deleteDebt={deleteDebt}
-                  editDebt={editDebt}
+                  deleteData={deleteData}
+                  editData={editData}
+                  path='debts-page'
+                  data={item?.debt}
                />
             ))}
 

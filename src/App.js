@@ -17,6 +17,9 @@ const DebtPage = lazy(() => import('./pages/DebtsPage/DebtPage'));
 const BorrowingsPage = lazy(() =>
    import('./pages/BorrowingsPage/BorrowingsPage')
 );
+const BorrowingPage = lazy(() =>
+   import('./pages/BorrowingsPage/BorrowingPage')
+);
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
@@ -62,6 +65,12 @@ function App() {
                      path='borrowings'
                      element={
                         isLogin ? <BorrowingsPage /> : <Navigate to='login' />
+                     }
+                  ></Route>
+                  <Route
+                     path='borrowings/:borrowingId'
+                     element={
+                        isLogin ? <BorrowingPage /> : <Navigate to='login' />
                      }
                   ></Route>
                </Route>
