@@ -20,7 +20,10 @@ const LendingCard = props => {
                {firstName} {lastName}
             </div>
             <div className='btns'>
-               <Link to={`/lendings/${id}`} className='btn btn-outline-primary'>
+               <Link
+                  to={`/debts-page/${id}`}
+                  className='btn btn-outline-primary'
+               >
                   M
                </Link>
                <button

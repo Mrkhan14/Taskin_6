@@ -25,7 +25,7 @@ const Footer = () => {
                </NavLink>
             </li>
             <li className='nav-item me-4'>
-               <NavLink className='nav-link' to='/lendings'>
+               <NavLink className='nav-link' to='/debts-page'>
                   <img src='/icons/LendingIcon.svg' alt='' />
                   <span className='name-block'>Lending</span>
                </NavLink>

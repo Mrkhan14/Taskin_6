@@ -1,12 +1,13 @@
+// Root
 import { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+// Constants
+import { IS_LOGIN } from './constants/index';
 // Components
+import './App.css';
 import Layout from './components/layout';
 import Loading from './components/UI/Loading';
-import { IS_LOGIN } from './constants/index';
-
-import './App.css';
 // Routes
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ExpensesPage = lazy(() => import('./pages/ExpensesPage/ExpensesPage'));
@@ -50,11 +51,11 @@ function App() {
                      }
                   ></Route>
                   <Route
-                     path='lendings'
+                     path='debts-page'
                      element={isLogin ? <DebtsPage /> : <Navigate to='login' />}
                   ></Route>
                   <Route
-                     path='lendings/:lendingId'
+                     path='debts-page/:debtId'
                      element={isLogin ? <DebtPage /> : <Navigate to='login' />}
                   ></Route>
                   <Route

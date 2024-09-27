@@ -71,6 +71,7 @@ const DebtsPage = () => {
       const newDebts = Array.isArray(debts) ? debts : [];
       setDebts(newDebts);
    }, []);
+
    return (
       <div>
          <div>
